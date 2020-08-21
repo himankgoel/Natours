@@ -96,6 +96,12 @@ body{
     display: inline-block;
     border-radius: 200px;
     transition: all 0.2s;
+    /* Set to relative for pseudo element to work */
+    position: relative;
+}
+.btn-animated{
+    animation: moveInBottom 2s ease-out .75s;
+    animation-fill-mode: backwards;
 }
 .btn:hover{
     transform:translateY(-3px);
@@ -108,4 +114,34 @@ body{
     background-color:#fff;
     color: #777;
     
+}
+.btn::after{
+    content: "";
+    width:100%;
+    height: 100%;
+    display: inline-block;
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition:all 0.4s;
+}
+.btn-white::after{
+    background-color: #FFF;
+}
+.btn:hover::after{
+    transform:scaleX(1.4) scaleY(1.6);
+    opacity: 0; 
+}
+
+@keyframes moveInBottom{
+    0%{
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
