@@ -1,0 +1,23 @@
+{
+  "name": "natours",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile:sass": "node-sass sass/main.scss css/styles.css -w && live-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/himankgoel/Natours.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/himankgoel/Natours/issues"
+  },
+  "homepage": "https://github.com/himankgoel/Natours#readme",
+  "devDependencies": {
+    "node-sass": "^4.14.1"
+  }
+}
