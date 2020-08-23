@@ -1,0 +1,16 @@
+/* Setting padding and margin zero to reset Browser's settings  */
+*,
+*::after,
+*::after{
+    margin : 0;
+    padding: 0;
+    /* This will make all elements of body to inherit the box-sizing property */
+    /* It's a slightly better practice to put it in body tag */
+    /* Doesn't make much difference though */
+    box-sizing: inherit;
+}
+html{
+    /* Settting font-size 62.5%(10px) to use rem further easily */
+    /* Now, 1rem = 10px so calculations become easier like 150px = 15rem */
+    font-size: 62.5%;
+}
