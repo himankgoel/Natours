@@ -45,3 +45,24 @@
         transition:all 0.4s;
     }
 }
+.btn-text{
+    &:link,
+    &:visited{
+        font-size: $default-font-size;
+        color: $color-primary-green;
+        display: inline-block;
+        text-decoration: none;
+        border-bottom:1px solid $color-primary-green;
+        padding: 3px;
+    }
+    &:hover{
+        background-color: $color-primary-green;
+        color: $color-white;
+        box-shadow: 0 1rem 2rem rgba($color: $color-black, $alpha: .2);
+        transform : translateY(2px);
+    }
+    &:visited{
+        box-shadow: 0 .5rem 1rem rgba($color: $color-black, $alpha: .2);
+        transform: translateY(0);
+    }
+}
