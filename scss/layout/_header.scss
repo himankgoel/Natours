@@ -1,12 +1,16 @@
 .header{
     height: 95vh;
     background-size: cover;
+
     /* Our linear gradient will be on top of the image and because of 0.8 opacity, image will be visible */
     background-image: linear-gradient(to right bottom,rgba($color-primary-light,0.8),rgba($color-primary-dark,0.8)) ,url("../img/hero.jpg");
     /* Background remain "sticked" to top even as we resize */
     background-position: top;
+
     /* Clipping path to achieve the shape */
+    -webkit-clip-path: polygon(0 0,100% 0, 100% 75vh, 0 100%);
     clip-path: polygon(0 0,100% 0, 100% 75vh, 0 100%);
+
     /* For Styling elements inside of Header, so that left right is referenced by this element */
     position: relative;
     &__logo-box{

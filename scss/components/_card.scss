@@ -1,0 +1,68 @@
+.card{
+    //Added perspective to make rotating better.
+    perspective: 150rem;
+    //Added for mozilla firefox.
+    -moz-perspective: 150rem;
+    //Made __side absolute so making this relative.
+    position: relative;
+    //Setting height because it collapsed as its children were absolute.
+    height: 50rem;
+    &__side{
+        height: 40rem;
+        width:100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        //Hidden so that when rotated, text is not visible.
+        backface-visibility: hidden;
+        transition: all .9s ease;
+        border-radius: 3px;
+        overflow: hidden;
+        box-shadow: 0 1.5rem 4rem rgba($color: $color-black, $alpha: .2);
+        &--front{
+            background-color: $color-white; 
+        }
+        &--back{
+            background-color: green;
+            //Back side will be 180deg by default(2-sided card)
+            transform: rotateY(180deg);
+            &-1{
+                background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark);
+            }
+        }  
+    } 
+    &:hover &__side--front{
+        //When card is hovered, front goes to the back.
+        transform: rotateY(-180deg);
+    } 
+    &:hover &__side--back{
+        //Back side comes to the front.
+        transform: rotateY(0);
+    } 
+    &__picture{ 
+        background-size: cover; 
+        height: 23rem;
+        background-blend-mode: screen;
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        &--1{
+            background-image:  linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark), url("../img/nat-5.jpg");
+        }
+        &--2{
+            background-image: url("../img/nat-5.jpg"); 
+        }
+        &--3{
+            background-image: url("../img/nat-5.jpg");
+        }
+    }
+    &__heading{
+        font-size: 2.8rem;
+        font-weight: 300;
+        text-transform: uppercase;  
+        text-align: right;
+        color:$color-white;
+        position: absolute;
+        top: 12rem;
+        right: 2rem;
+    }
+}         
