@@ -1,0 +1,56 @@
+.story{
+    width: 75%;
+    margin: 0 auto;
+    box-shadow: 0 3rem 6rem rgba($color: $color-black, $alpha: .1);
+    background-color: rgba($color: $color-white, $alpha: .2);
+    border-radius:3px;
+    padding:6rem;
+    font-size: $default-font-size;
+    //Gives shape likes a parallelogram.
+    transform: skewX(-12deg);
+    
+    &__shape{
+        width: 15rem;
+        height: 15rem;
+        //To shift circular to the left of parent div.
+        float: left;
+        //Wraps contents around it as if there is a circle.
+        -webkit-shape-outside:circle(50% at 50% 50%); // For safari
+        shape-outside: circle(50% at 50% 50%);
+        //Giving shape of circle to div.
+        clip-path: circle(50% at 50% 50%);
+        //As div is float, so margin is not manipulated.
+        //Translating it to left to give margin.
+        //Skew to counter the skew of parent.
+        transform: translateX(-20%) skewX(12deg);
+    }
+    &__img{
+        height: 100%;
+        transform: translateX(-4rem) scale(1.4);
+        transition: all .6s;
+    }
+    &__text{
+        //Skew to counter the skew of parent.
+        transform: skewX(12deg);
+    }
+    &__caption{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,0);
+        font-size: 1.7rem;
+        color: $color-white;
+        text-transform: uppercase;
+        text-align: center;
+        opacity: 0;
+        transition: all .6s;
+    }
+    &:hover &__caption{
+        opacity: 1;
+        transform: translate(-50%,-50%);
+    }
+    &:hover &__img{
+        transform: translateX(-4rem) scale(1);
+        filter: blur(3px) brightness(80%);
+    }
+}   
