@@ -17,14 +17,14 @@
         backface-visibility: hidden;
         transition: all .9s ease;
         border-radius: 3px;
+        //Image was overflowing and rounded corners were not visible.
         overflow: hidden;
         box-shadow: 0 1.5rem 4rem rgba($color: $color-black, $alpha: .2);
         &--front{
             background-color: $color-white; 
         } 
         &--back{
-            background-color: green;
-            //Back side will be 180deg by default(2-sided card)
+            //Back side will be 180deg by default(2-sided card) 
             transform: rotateY(180deg);
             &-1{
                 background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark);
@@ -48,6 +48,7 @@
     &__picture{ 
         background-size: cover; 
         height: 23rem;
+        //Added effects.
         background-blend-mode: screen;
         -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
         clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
