@@ -128,4 +128,43 @@
         font-size:6rem;
         font-weight: 100;
     }
+
+
+    //MEDIA QUERY
+
+
+    @include respond(tab-port){
+      
+    height: auto;
+
+    &__side{
+        height: auto;
+        width:100%;
+        position: relative;
+        &--back{
+            //Back side will be 180deg by default(2-sided card) 
+            transform: rotateY(0);
+            
+        }   
+    }  
+
+   
+    &__cta{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        transform: translate(0);
+    }
+    &__price-box{
+        text-align: center;
+    }
+    &__price-only{
+        font-size: 1.5rem;
+    }
+    &__price-value{
+        font-size:6rem;
+        font-weight: 100;
+    }
+    }
 }                          

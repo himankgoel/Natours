@@ -13,6 +13,10 @@
 
     /* For Styling elements inside of Header, so that left right is referenced by this element */
     position: relative;
+
+    @include respond(tab-port){
+        -webkit-clip-path: polygon(0 0,100% 0, 100% 85vh, 0 100%);
+    }
     &__logo-box{
         position: absolute;
         left: 4rem;
@@ -23,7 +27,7 @@
     }
     &__text-box{
         position: absolute;
-        top: 38%;
+        top: 45%;
         left: 50%;
         transform: translate(-50%,-50%);
         text-align: center;
